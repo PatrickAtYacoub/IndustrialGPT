@@ -1,0 +1,123 @@
+\appendices
+\section{Benchmarks}
+
+\subsection{GLUE Benchmark}
+
+Der GLUE Benchmark sieht wie folgt aus (nach \cite{wang_glue:_2019}):
+
+\subsubsection*{Durchführung eines GLUE-Tests}
+
+Um einen GLUE-Test durchzuführen, müssen die folgenden Schritte ausgeführt werden:
+
+\begin{enumerate}
+\item Zugriff auf die GLUE-Benchmark-Website: Besuchen Sie die offizielle GLUE-Benchmark-Website (gluebenchmark.com), um Informationen über verfügbare Aufgaben und Testdaten zu erhalten.
+\item Modellvorbereitung: Stellen Sie sicher, dass Sie ein NLU-Modell haben, das Eingaben in Form von einzelnen Sätzen oder Satzpaaren verarbeiten kann. Das Modell sollte auch in der Lage sein, Vorhersagen für verschiedene Aufgaben zu machen.
+\item Datenherunterladen: Laden Sie die erforderlichen Datensätze für die spezifischen GLUE-Aufgaben herunter. Diese Datensätze sind meist auf der GLUE-Website oder in den entsprechenden Veröffentlichungen verlinkt.
+\item Modelltraining: Trainieren Sie Ihr Modell mit den verfügbaren Trainingsdaten. Beachten Sie, dass einige Aufgaben begrenzte Trainingsdaten haben, was es Ihrem Modell ermöglicht, Wissen zwischen Aufgaben zu teilen.
+\item Bewertung: Führen Sie Ihr trainiertes Modell auf den bereitgestellten Testdaten aus. Die Ergebnisse sollten in einem Format vorliegen, das den Anforderungen des GLUE-Benchmarks entspricht.
+\item Ergebnis-Upload: Stellen Sie die Ergebnisse auf der GLUE-Benchmark-Website hoch, um Ihre Leistung zu bewerten. Die Website zeigt Scores für jede Aufgabe und einen Makro- Durchschnittsscore, der Ihre Platzierung bestimmt.
+\item Ergebnisanalyse: Verwenden Sie die bereitgestellten Analysewerkzeuge auf der Website, um Ihre Ergebnisse zu interpretieren und zu verstehen, wie Ihr Modell auf verschiedenen Aufgaben abgeschnitten hat.
+\end{enumerate}
+
+\subsubsection*{GLUE-Aufgaben}
+
+Das GLUE-Benchmark besteht aus neun Aufgaben, die verschiedene Aspekte der natürlichen Sprachverarbeitung (NLU) abdecken. Die Aufgaben sind:
+
+\begin{enumerate}
+\item CoLA (Corpus of Linguistic Acceptability): Bewertet die grammatikalische Akzeptanz von Sätzen. Modelle müssen entscheiden, ob ein gegebenen Satz grammatikalisch korrekt ist oder nicht.
+
+Beispiel: "Die Katze saß auf dem Teppich." (Akzeptabel) vs. "Die Katze saß auf Teppich die." (Nicht akzeptabel)
+
+\item SST-2 (Stanford Sentiment Treebank): Klassifiziert die Meinung eines Satzes als positiv oder negativ.
+
+Beispiel: "Ich liebe diesen Film!" (Positiv) vs. "Ich hasse diesen Film." (Negativ)
+
+\item MRPC (Microsoft Research Paraphrase Corpus): Identifiziert Paraphrasen. Modelle müssen entscheiden, ob zwei gegebene Sätze denselben Sinn haben.
+
+Beispiel: "Die Katze sitzt auf dem Teppich." vs. "Der Teppich liegt unter der Katze." (Nicht äquivalent)
+
+\item QQP (Quora Fragepaare): Ähnlich wie MRPC, aber für Fragen. Modelle müssen entscheiden, ob zwei Fragen denselben Sinn haben.
+
+Beispiel: "Was ist die beste Art, Python zu lernen?" vs. "Wie kann ich Python effektiv lernen?" (Äquivalent)
+
+\item QNLI (Question Natural Language Inference): Erfordert Modelle, um zu entscheiden, ob eine gegebene Antwort aus einem Textpassage abgeleitet werden kann.
+
+Beispiel: Frage: "Was ist die Hauptstadt Frankreichs?" Text: "Paris ist die Hauptstadt Frankreichs." (Ja)
+
+\item RTE (Recognizing Textual Entailment): Bewertet die logische Beziehung zwischen zwei Sätzen.
+
+Beispiel: "Alle Katzen sind Tiere." vs. "Einige Tiere sind Katzen." (Entailment)
+
+\item WNLI (Winograd NLI): Erfordert Modelle, um die korrekte Referenz für Pronomen in einem Satz zu identifizieren, um dessen Bedeutung zu verstehen.
+
+Beispiel: "Das Preisgeld passte nicht in den Koffer, weil es zu groß war." (Was ist zu groß? Das Preisgeld oder der Koffer?)
+
+\item STSB (Semantic Textual Similarity Benchmark): Bewertet die semantische Ähnlichkeit zwischen zwei Sätzen auf einer Skala von 0 bis 5.
+
+Beispiel: "Die Katze sitzt auf dem Teppich." und "Eine Katze sitzt auf einem Teppich." (Ähnlichkeit: 4)
+
+\item SICK (Sentences Involving Compositional Knowledge): Bewertet die Fähigkeit, die Beziehung zwischen zwei Sätzen zu verstehen, einschließlich Ähnlichkeit und Entailment.
+
+Beispiel: "Ein Mann spielt Gitarre." vs. "Ein Mann spielt Musik." (Ähnlichkeit: 3)
+\end{enumerate}
+
+Diese Aufgaben sind entworfen, um verschiedene Sprachverarbeitungsfähigkeiten zu testen und die Entwicklung von Modellen zu fördern, die Wissen teilen und es auf verschiedene Aufgaben anwenden können.
+
+\subsection{SuperGLUE}
+
+SuperGLUE ist ein Benchmark zur Bewertung von allgemeinen Sprachverständnissystemen, der als Erweiterung des ursprünglichen GLUE-Benchmarks entwickelt wurde. Es wurde entworfen, um ein anspruchsvolleres Testumfeld für Sprachverständnisaufgaben zu schaffen, die die Fähigkeiten aktueller State-of-the-Art-Systeme übersteigen. SuperGLUE besteht aus einer Sammlung von acht anspruchsvollen Aufgaben, die sich zum Ziel setzen, den Fortschritt im Natural Language Processing (NLP) zu messen und zu fördern.
+
+SuperGLUE benchmarking erfolgt so (nach \cite{wang_superglue:_2020}):
+
+\subsubsection*{Schlüsselmerkmale}
+
+\begin{itemize}
+\item Anspruchsvolle Aufgaben: SuperGLUE enthält Aufgaben, die schwieriger sind als die meisten Aufgaben im GLUE-Benchmark und das Verhalten von Modellen in der Sprachverständigung testen.
+\item Vielfalt von Aufgabenformaten: Die Aufgaben in SuperGLUE sind vielfältig und umfassen verschiedene Formate, um eine breitere Palette von Sprachverständigungsfähigkeiten zu evaluieren.
+\item Öffentlicher Leaderboard: SuperGLUE bietet einen öffentlichen Leaderboard, auf dem Forscher ihre Modelle vergleichen und den Fortschritt in der Sprachverständigung verfolgen können.
+\item Software-Toolkit: Ein Software-Toolkit wird bereitgestellt, um die Implementierung und Bewertung von Modellen auf SuperGLUE-Aufgaben zu erleichtern.
+\end{itemize}
+
+\subsubsection*{Wie funktioniert der Benchmark?}
+
+Der SuperGLUE-Benchmark funktioniert in mehreren Schritten, die sich zum Ziel setzen, die Leistung von Sprachverständnissystemen zu evaluieren und zu vergleichen. Die Hauptkomponenten des Prozesses sind:
+
+\begin{itemize}
+\item Aufgaben: SuperGLUE besteht aus acht verschiedenen Sprachverständnisaufgaben, die aus bestehenden Datensätzen abgeleitet wurden. Diese Aufgaben sind entworfen, um die Fähigkeiten von Modellen in verschiedenen Aspekten der Sprachverständigung zu testen.
+\item Daten: Jede Aufgabe hat einen spezifischen Datensatz, der für das Training und die Bewertung von Modellen verwendet wird. Die Aufgaben variieren in der Anzahl der Trainingsbeispiele, wobei viele Aufgaben weniger als 10.000 Beispiele haben, was die Herausforderung erhöht.
+\item Modelltraining: Forscher trainieren ihre Modelle auf den bereitgestellten Datensätzen. Modelle können verschiedene Ansätze wie Transfer-Learning, selbstsupervisierte Lernen und Multitasking verwenden, um ihre Leistung zu optimieren.
+\item Bewertung: Nach dem Training werden Modelle auf den Test-Datensätzen jeder Aufgabe bewertet. Die Leistung wird mithilfe eines einheitlichen Metriksystems gemessen, das es ermöglicht, Modelle miteinander zu vergleichen.
+\item Öffentlicher Leaderboard: Die Ergebnisse von Modellen werden auf einem öffentlichen Leaderboard veröffentlicht, auf dem Forscher ihren Fortschritt verfolgen und ihre Modelle mit anderen vergleichen können.
+\item Analyse-Toolkit: SuperGLUE bietet ein Analyse-Toolkit, das Forschern hilft, ihre Ergebnisse zu interpretieren und Bereiche für Verbesserungen zu identifizieren.
+\end{itemize}
+
+\subsubsection*{Welche Aufgaben müssen erledigt werden?}
+
+SuperGLUE besteht aus acht spezifischen Aufgaben, die sich zum Ziel setzen, verschiedene Aspekte der Sprachverständigung zu testen. Diese Aufgaben sind:
+
+\begin{enumerate}
+\item BoolQ (Boolesche Fragen): Eine Aufgabe, die es Modellen ermöglicht, Fragen zu beantworten, die mit "ja" oder "nein" beantwortet werden können, basierend auf einem gegebenen Text.
+\item COPA (Wahl von plausiblen Alternativen): Eine Aufgabe, die es Modellen ermöglicht, die plausibelste Alternative aus zwei Optionen zu wählen, die einem gegebenen Situation entsprechen.
+\item MultiNLI (Multigenre-Natural Language Inference): Eine Aufgabe, die es Modellen ermöglicht, zu bestimmen, ob eine Aussage eine Entailment, eine Kontradiktion oder ein neutrales Verhältnis zu einer anderen Aussage hat.
+\item ReCoRD (Leseverständnis mit Common Sense Reasoning-Datensatz): Eine Aufgabe, die es Modellen ermöglicht, Fragen zu beantworten, die auf einem gegebenen Text basieren und auf die Verwendung von Weltwissen abstellen.
+\item RTE (Erkennung von Textual Entailment): Eine Aufgabe, die es Modellen ermöglicht, zu bestimmen, ob eine Aussage aus einer anderen Aussage abgeleitet werden kann.
+\item WSC (Winograd-Schema-Challenge): Eine Aufgabe, die es Modellen ermöglicht, korrekte Referenzen von Pronomen in einem gegebenen Kontext auf die korrespondierenden Nomen zu setzen.
+\item WiC (Wort im Kontext): Eine Aufgabe, die es Modellen ermöglicht, zu bestimmen, ob ein Wort in zwei verschiedenen Sätzen dieselbe Bedeutung hat.
+\item CommitmentBank: Eine Aufgabe, die es Modellen ermöglicht, die Verständnis von linguistischen Verpflichtungen zu testen und die Absichten hinter bestimmten Aussagen zu erkennen.
+\end{enumerate}
+
+Diese Aufgaben sind entworfen, um eine breite Palette von Sprachverständigungsfähigkeiten abzubilden und Modellen zu fordern, ihre Grenzen zu überwinden.
+
+\subsubsection*{Was unterscheidet SuperGLUE von GLUE?}
+
+SuperGLUE unterscheidet sich von seinem Vorgänger, GLUE, in mehreren Schlüsselaspekten:
+
+\begin{itemize}
+\item Schwierigkeit: SuperGLUE wurde entworfen, um anspruchsvollere Aufgaben als GLUE zu bieten. Während GLUE bereits eine breite Palette von Aufgaben abdeckte, konzentriert sich SuperGLUE auf spezifischere, anspruchsvollere Aufgaben, die die Grenzen aktueller NLP-Modelle testen.
+\item Aufgabenvariabilität: SuperGLUE enthält eine neue und vielfältige Sammlung von Aufgaben, die verschiedene Formate und Anforderungen für die Sprachverständigung präsentieren. Im Gegensatz zu GLUE, das eine breitere Palette von Aufgaben abdeckte, konzentriert sich SuperGLUE auf spezifischere, anspruchsvollere Aufgaben.
+\item Datengröße: Viele Aufgaben in SuperGLUE haben weniger Trainingsbeispiele, was die Herausforderung erhöht. Fast die Hälfte der Aufgaben in SuperGLUE haben weniger als 1.000 Beispiele, während GLUE einen größeren Datensatz hatte.
+\item Leistungsbewertung: SuperGLUE verwendet ein einheitliches Metriksystem, um die Leistung von Modellen zu bewerten, was es ermöglicht, Modelle miteinander zu vergleichen. Der Benchmark zielt darauf ab, ein rigures und transparentes Verfahren für die Bewertung des Fortschritts in der Sprachverständigung bereitzustellen.
+\item Fokus auf Fortschritt: SuperGLUE wurde entwickelt, um den Fortschritt in der NLP-Forschung zu reflektieren und zu fördern. Es zielt darauf ab, die Benchmarks fortzusetzen, die die Modellentwicklung ansprechen und Innovation fördern.
+\end{itemize}
+
+Insgesamt zielt SuperGLUE darauf ab, ein anspruchsvolleres Testumfeld für Sprachverständnissysteme zu schaffen, das den Fortschritt in der NLP-Forschung reflektiert und Innovation fördert.

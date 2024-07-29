@@ -1,0 +1,58 @@
+\section{RAG}
+\label{sec:rag}
+
+Die technische Architektur eines auf Retrieval-Augmented Generation (RAG) basierenden Systems nutzt fortschrittliche Techniken zur Verarbeitung und Beantwortung von Benutzeranfragen unter Verwendung von Inhalten aus PDF-Dokumenten. Die Architektur umfasst mehrere wesentliche Komponenten:
+
+\begin{itemize}
+    \item \textbf{Dokumentenaufnahme}: Laden und Aufteilen von PDF-Dokumenten in handhabbare Abschnitte.
+    \item \textbf{Einbettung}: Umwandlung von Textabschnitten in Einbettungen mittels spezialisierter Embedding-Modelle.
+    \item \textbf{Vektorspeicher}: Speichern der Einbettungen in einer Vektordatenbank.
+    \item \textbf{Retriever}: Abrufen relevanter Dokumentabschnitte basierend auf Ähnlichkeitswerten.
+    \item \textbf{Prompt}: Erstellen eines strukturierten Prompts mit dem abgerufenen Kontext und der Benutzeranfrage.
+    \item \textbf{Sprachmodell}: Generieren von Antworten mit einem spezialisierten Sprachmodell.
+    \item \textbf{Ausgabe-Parsing}: Formatieren der generierten Ausgabe mittels spezialisierter Parser.
+\end{itemize}
+
+\subsection{Pipeline-Beschreibung}
+\label{subsec:pipeline-beschreibung}
+Der Verarbeitungsprozess in einem RAG-basierten System erfolgt in mehreren Schritten:
+
+\begin{enumerate}
+    \item \textbf{PDF-Dokumente einlesen}:
+    \begin{itemize}
+        \item Laden von PDF-Dokumenten mit spezialisierter Software.
+        \item Aufteilen der Dokumente in Abschnitte mit geeigneten Text-Splittern.
+        \item Filtern und Einbetten der Abschnitte mit Embedding-Techniken.
+        \item Speichern der Einbettungen im Vektorspeicher.
+        \item Konfigurieren eines Retrievers zum Abrufen relevanter Abschnitte basierend auf Ähnlichkeitswerten.
+    \end{itemize}
+    \item \textbf{Anfragebearbeitung}:
+    \begin{itemize}
+        \item Abrufen der relevantesten Dokumentabschnitte bei Empfang einer Anfrage.
+        \item Kombinieren der abgerufenen Abschnitte und der Anfrage in eine Prompt-Vorlage.
+        \item Verarbeiten des Prompts mit dem Sprachmodell zur Generierung einer Antwort.
+        \item Parsen und Formatieren der Antwort, einschließlich Quellinformationen aus den abgerufenen Dokumenten.
+    \end{itemize}
+\end{enumerate}
+ 
+
+\subsection{Verwendete Techniken und Komponenten}
+Ein RAG-basiertes System nutzt mehrere fortschrittliche Techniken:
+
+\subsubsection{Embeddings}
+Embeddings werden verwendet, um Textabschnitte in numerische Vektoren umzuwandeln, die die semantische Bedeutung des Textes erfassen. Diese Einbettungen erleichtern die Berechnung von Ähnlichkeitswerten für die Dokumentenabfrage.
+
+\subsubsection{Vector Stores}
+Ein Vektorspeicher dient als Datenbank, die Dokumenteneinbettungen speichert und eine effiziente Abfrage basierend auf Ähnlichkeit ermöglicht.
+
+\subsubsection{Textaufteilung}
+Geeignete Text-Splitter werden verwendet, um Dokumente in handhabbare Abschnitte zu unterteilen und dabei so viel Kontext wie möglich zu erhalten.
+
+\subsubsection{Prompt Engineering}
+Prompt-Vorlagen werden verwendet, um eine strukturierte Eingabe für das Sprachmodell vorzubereiten, indem die Benutzeranfrage mit dem abgerufenen Kontext integriert wird.
+
+\subsubsection{Ausgabe-Parsing}
+Spezialisierte Parser werden genutzt, um die Rohausgabe des Sprachmodells in ein strukturiertes und benutzerfreundliches Format zu parsen.
+
+\section{Schlussfolgerung}
+Die Nutzung von Retrieval-Augmented Generation (RAG) in IndustrialGPT demonstriert effektiv die Verbesserung der Genauigkeit und Relevanz von Antworten, die von einem Sprachmodell generiert werden. Durch die Integration von Dokumentenabruf und Sprachgenerierung bietet diese Architektur ein robustes Framework für die Verarbeitung und das Verständnis komplexer dokumentbasierter Anfragen im industriellen Kontext.

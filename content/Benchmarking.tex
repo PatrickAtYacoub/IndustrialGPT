@@ -1,0 +1,112 @@
+\section{Benchmarking}
+\label{sec:benchmarking}
+ \PARstart{U}{m} Ihr großes Sprachmodell (LLM) zu benchmarken, können verschiedene Methoden und Metriken genutzt werden, die jeweils verschiedene Aspekte der Leistung des Modells fokussieren. Diese Methoden umfassen etablierte Benchmarks, spezifische Evaluationsmetriken und die Verwendung von Evaluierungs-Frameworks oder Plattformen. Im Folgenden finden Sie eine detaillierte Erklärung dieser Methoden: 
+ 
+ \section{Benchmarks für LLMs} 
+ 
+ \begin{enumerate} 
+    \item \textbf{GLUE (General Language Understanding Evaluation)}\cite{huang_evaluating_2024}: 
+    \begin{itemize} 
+        \item \textbf{Beschreibung}: GLUE ist eine Sammlung verschiedener Natural Language Processing (NLP)-Aufgaben, die einen standardisierten Rahmen für die Bewertung der Leistung von Sprachmodellen bieten. 
+        \item \textbf{Aufgaben}: Enthält Aufgaben wie Fragebeantwortung, Sentimentanalyse und textuelle Entailment. 
+        \item \textbf{Verwendung}: Um ein LLM mit GLUE zu benchmarken, muss die bereitgestellte Aufgabensuite ausgeführt und die Ergebnisse mit den GLUE-Basisscores verglichen werden. 
+        \item \textbf{Referenz}: \url{https://gluebenchmark.com/} 
+    \end{itemize}
+
+    \item \textbf{SuperGLUE}\cite{huang_evaluating_2024}:
+    \begin{itemize}
+        \item \textbf{Beschreibung}: Als Erweiterung von GLUE umfasst SuperGLUE anspruchsvollere Aufgaben und bietet umfassendere menschliche Baselines.
+        \item \textbf{Aufgaben}: Enthält Aufgaben wie Coreference-Resolution und kausales Denken.
+        \item \textbf{Verwendung}: Ähnlich wie bei GLUE benchmarken Sie Ihr LLM, indem Sie seine Leistung bei diesen Aufgaben evaluieren und mit den SuperGLUE-Baselines vergleichen.
+        \item \textbf{Referenz}: \url{https://super.gluebenchmark.com/}
+    \end{itemize}
+    
+    \item \textbf{HellaSwag}\cite{huang_evaluating_2024}:
+    \begin{itemize}
+        \item \textbf{Beschreibung}: Konzentriert sich darauf, die Fähigkeit des Modells zu bewerten, Sätze auf eine vernünftige Weise zu vervollständigen.
+        \item \textbf{Verwendung}: Sie geben dem Modell unvollständige Sätze und messen seine Genauigkeit bei der Auswahl der passendsten Vervollständigung aus einer Reihe von Optionen.
+        \item \textbf{Referenz}: \url{https://rowanzellers.com/hellaswag/}
+    \end{itemize}
+    
+    \item \textbf{TruthfulQA}\cite{huang_evaluating_2024}:
+    \begin{itemize}
+        \item \textbf{Beschreibung}: Misst die Wahrhaftigkeit der vom LLM generierten Antworten.
+        \item \textbf{Verwendung}: Dies beinhaltet das Stellen von Fragen an das Modell und die anschließende Bewertung der faktischen Richtigkeit seiner Antworten.
+        \item \textbf{Referenz}: \url{https://github.com/sylinrl/TruthfulQA}
+    \end{itemize}
+    
+    \item \textbf{MMLU (Massive Multitask Language Understanding)}\cite{huang_evaluating_2024}:
+    \begin{itemize}
+        \item \textbf{Beschreibung}: Evaluierung der Fähigkeit des Modells, mehrere Aufgaben gleichzeitig zu bewältigen.
+        \item \textbf{Verwendung}: Sie testen die Leistung des Modells über eine breite Palette von Aufgaben und prüfen seine Multitasking-Fähigkeiten.
+        \item \textbf{Referenz}: \url{https://github.com/hendrycks/test}
+    \end{itemize}
+\end{enumerate} 
+
+\section{Evaluierungs-Frameworks und Plattformen} 
+\begin{enumerate}
+    \item \textbf{Azure AI Studio (Microsoft)}\cite{huang_evaluating_2024}: 
+    \begin{itemize} 
+        \item \textbf{Beschreibung}: Eine All-in-One-KI-Plattform zum Erstellen, Evaluieren und Bereitstellen von KI-Modellen. 
+        \item \textbf{Funktionen}: Enthält einen Modellkatalog, CLI-Tools und das AzureML-Metriks-SDK für umfassende Modellbewertung.
+         \item \textbf{Verwendung}: Sie können Azure AI Studio nutzen, um den Benchmarking-Prozess zu optimieren, indem Sie seine Tools verwenden, um die Evaluation über verschiedene Aufgaben und Metriken zu automatisieren.
+    \end{itemize}
+    
+    \item \textbf{Prompt Flow (Microsoft)}\cite{huang_evaluating_2024}:
+    \begin{itemize}
+        \item \textbf{Beschreibung}: Eine Suite von Entwicklungstools, die darauf abzielen, den Entwicklungszyklus von LLM-basierten Anwendungen zu vereinfachen.
+        \item \textbf{Verwendung}: Nützlich für die End-to-End-Entwicklung, einschließlich Prototyping, Testen, Evaluierung und Bereitstellung.
+    \end{itemize}
+    
+    \item \textbf{Weights \& Biases}\cite{huang_evaluating_2024}:
+    \begin{itemize}
+        \item \textbf{Beschreibung}: Eine Plattform zur Verfolgung von Experimenten, Versionierung von Datensätzen, Evaluierung der Modellleistung und Visualisierung von Ergebnissen.
+        \item \textbf{Verwendung}: Hilft dabei, umfassende Aufzeichnungen zur Leistung Ihres Modells über verschiedene Benchmarks und Experimente zu führen.
+    \end{itemize}
+    
+    \item \textbf{LangSmith (LangChain)}\cite{huang_evaluating_2024}:
+    \begin{itemize}
+        \item \textbf{Beschreibung}: Konzentriert sich auf das Nachverfolgen und Evaluieren von Sprachmodell-Anwendungen, um den Übergang vom Prototyp zur Produktion zu unterstützen.
+        \item \textbf{Verwendung}: Besonders nützlich zur Evaluierung des Modells während der Entwicklungsphase und Sicherstellung seiner Einsatzbereitschaft für die Produktion.
+    \end{itemize}
+    
+    \item \textbf{TruLens (TruEra)}\cite{huang_evaluating_2024}:
+    \begin{itemize}
+        \item \textbf{Beschreibung}: Bietet Werkzeuge zur Entwicklung und Überwachung von neuronalen Netzwerken, einschließlich LLMs, mit Fähigkeiten zur Evaluation und Erklärbarkeit.
+        \item \textbf{Verwendung}: Ermöglicht eine detaillierte Analyse der Modellleistung und hilft bei der Nachvollziehbarkeit spezifischer Ergebnisse.
+    \end{itemize}
+    
+    \item \textbf{Vertex AI Studio (Google)}\cite{huang_evaluating_2024}:
+    \begin{itemize}
+        \item \textbf{Beschreibung}: Evaluierung von Grundlagenmodellen und abgestimmten generativen KI-Modellen anhand eines Satzes von Metriken gegen einen Evaluierungsdatensatz.
+        \item \textbf{Verwendung}: Bietet eine Plattform, um Ihr LLM zu benchmarken und zu optimieren, um sicherzustellen, dass seine Leistung den gewünschten Standards entspricht.
+    \end{itemize}
+    
+    \item \textbf{Amazon Bedrock}\cite{huang_evaluating_2024}:
+    \begin{itemize}
+        \item \textbf{Beschreibung}: Unterstützt die Evaluierung von Modell-Evaluierungsaufgaben, die den Vergleich von Modellausgaben ermöglichen und die Auswahl des besten Modells für nachgelagerte Anwendungen ermöglichen.
+        \item \textbf{Verwendung}: Erleichtert die Evaluierung von gängigen LLM-Aufgaben wie Textgenerierung, Klassifizierung und Zusammenfassung.
+    \end{itemize}
+\end{enumerate} 
+
+\section*{Schritte zum Benchmarking eines LLM}\cite{huang_evaluating_2024}
+
+\begin{enumerate} 
+    \item \textbf{Wählen des geeignetesten Benchmarks}: Wählen von Benchmarks wie GLUE, SuperGLUE oder TruthfulQA basierend auf den spezifischen Fähigkeiten aus, die evaluiert werden sollen.
+    \item \textbf{Vorbereiten des Models}: Sicherstellen, dass das LLM ordnungsgemäß trainiert wurde und für die Evaluierung bereit ist. Dazu gehört die Vorverarbeitung von Daten und das Einrichten der erforderlichen Umgebung für das Benchmarking.
+    
+    \item \textbf{Durchführen des Benchmarks}:
+    Ausführen der Benchmark-Aufgaben und aufnehmen der von jedem Benchmark-Suite bereitgestellten Leistungsmetriken.
+    
+    \item \textbf{Analysieren der Ergebnisse}:
+    Vergleichen der Leistung des Modells mit den Benchmark-Baselines. Dazu können Plattformen wie Weights \& Biases oder Azure AI Studio für eine detaillierte Analyse und Visualisierung verwendet werden.
+
+    \item \textbf{Iterieren und Verbessern}:
+    Ddentifizieren von Bereichee zur Verbesserung basierend auf den Ergebnissen. Bei Bedarf Anpassen der Architektur des Modells, Trainingsdaten oder Hyperparameter.
+    
+    \item \textbf{Dokumentieren der Erkenntnisse}:
+    Führen einer gründliche Dokumentation Ihres Benchmarking-Prozesses, der Ergebnisse und nachfolgender Modifikationen. Dies wird für zukünftige Referenzen und zur Kommunikation der Fähigkeiten des Modells an Stakeholder entscheidend sein.
+
+\end{enumerate}
+    
+Durch die systematische Anwendung dieser Benchmarking-Methoden können die Leistung eines LLMs umfassend evaluiert, seine Stärken und Schwächen identifiziert und die weitere Entwicklung zur Verbesserung seiner Fähigkeiten vorangetrieben werden.
